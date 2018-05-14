@@ -1,0 +1,78 @@
+<html>
+<head>
+<script src="qj.js"></script>
+<link rel="stylesheet" href="qj.css">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<style>
+.Alert_2{
+	top: 150px;
+}
+</style>
+</head>
+<body>
+	<div class="dd">111</div>
+
+	<div class="aa">1111</div>
+
+	<div class="aaa">111</div>
+	<div class="aaa">111</div>
+	<div class="aaa">111</div>
+
+	<div id="Alert"></div>
+	<div ><p id="remove"></p> <p id="remove_1"></p><p id="remove_1"></p><p id="remove_1"></p><p id="remove_2"></p></div>
+	<button onclick="dd();">提示框</button>
+	<script>
+		removeClass(document.querySelector(".dd"),"dd")
+
+		// AllremoveClass(document.querySelectorAll(".aaa"),"aaa")
+		
+		changeClass(document.querySelector(".aa"),"aa","cc");
+
+		AllchangeClass(document.querySelectorAll(".aaa"),"aaa","bbb");
+
+		Alert("123456",450,800,"niubi",document.getElementById('Alert'),"tada","bounceOut",function(){
+				alert("ok");				
+		});
+			 //提示内容 进入时间(ms) 停留时间(ms) className 生成位置 进入动画 退出动画
+		// Alert("123456",800,800,"Alert_2");
+
+		remove(document.getElementById("remove"));
+
+		Allremove(document.querySelectorAll("#remove_1"));
+
+		/*
+		if(confirm("666")){
+			alert("true");
+		}else{
+			alert("false");
+		}*/
+
+		//var bool=prompt("你多大了"); alert(bool);//确定返回值 取消返回null
+		
+		function dd(){
+			var parent=document.body;
+			Confirm({
+				"title":"提示",
+				"content":"你确定要删除吗？",
+				"parent":document.body,
+				"id":"",
+				"callback":function(r,dd){
+					if(r){
+						alert("确定")
+						dd&&dd();
+					}else{
+						alert("取消")
+						dd&&dd();
+					}
+					
+				}
+			})
+
+
+		}
+
+		drag(document.querySelector(".niubi i"),document.querySelector(".niubi i").parentNode);
+		//拖拽  点击对象  移动拖拽对象
+	</script>
+</body>
+</html>
